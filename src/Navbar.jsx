@@ -1,0 +1,18 @@
+export function Navbar() {
+  return (
+    <nav className="navbar sticky-bottom bg-body-tertiary">
+      <div className="container">
+        <a className="navbar-brand" href="#">
+          <img src="src/assets/person_110935.png" alt="Profile" width="30" height="24" />
+        </a>
+        <a className="navbar-brand" href="#">
+          <img src="src/assets/Home-512.webp" alt="Home" width="30" height="24" />
+        </a>
+        <a className="navbar-brand" href="#">
+          <img src="src/assets/Plus-Symbol-Transparent-Images.png" alt="Bootstrap" width="30" height="24" />
+        </a>
+      </div>
+    </nav>
+  );
+}
+// src/assets/person_110935
