@@ -1,3 +1,7 @@
 export function UploadsShow(props) {
-  return <div>{props.upload.image}</div>;
+  return (
+    <div>
+      <img src={props.upload.image} style={{ width: "50rem" }} />
+    </div>
+  );
 }
