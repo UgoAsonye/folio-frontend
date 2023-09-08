@@ -1,3 +1,4 @@
+import { Comment } from "./Comment";
 export function Index(props) {
   return (
     <div>
@@ -13,7 +14,9 @@ export function Index(props) {
             <button onClick={() => props.onShowUpload(upload)}>Show Photo</button>
           </div>
           <ul className="list-group list-group-flush">
-            <li className="list-group-item">An item</li>
+            <li className="list-group-item">
+              <Comment />
+            </li>
             <li className="list-group-item">A second item</li>
             <li className="list-group-item">A third item</li>
           </ul>

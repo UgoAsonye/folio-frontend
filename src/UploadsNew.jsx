@@ -22,5 +22,3 @@ export function UploadsNew(props) {
     </div>
   );
 }
-
-//Create not working...

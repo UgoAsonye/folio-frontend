@@ -36,13 +36,22 @@ export function Content() {
     setIsUploadsShowVisible(false);
   };
 
+  const handleDestroyUpload = (upload) => {
+    console.log("handleDestroyUpload", upload);
+    axios.delete(`http://localhost:3000/uploads/${upload.id}.json`).then((response) => {
+      setUploads;
+      uploads.filter((p) => p.id !== upload.id);
+      handleClose();
+    });
+  };
+
   useEffect(handleIndex, []);
 
   return (
     <div>
       <UploadsNew onCreateUpload={handleCreateUpload} />
       <Index uploads={uploads} onShowUpload={handleShowUpload} />
-      <Modal show={isUploadsShowVisible} onClose={handleClose}>
+      <Modal show={isUploadsShowVisible} onClose={handleClose} onDestroyUpload={handleDestroyUpload}>
         <UploadsShow upload={currentUpload} />
       </Modal>
     </div>
