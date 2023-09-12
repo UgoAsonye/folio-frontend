@@ -5,7 +5,7 @@ export function Navbar() {
         <a className="navbar-brand" href="/profile">
           <img src="src/assets/person_110935.png" alt="Profile" width="30" height="24" />
         </a>
-        <a className="navbar-brand" href="/homepage">
+        <a className="navbar-brand" href="/">
           <img src="src/assets/Home-512.webp" alt="Home" width="30" height="24" />
         </a>
         <a className="navbar-brand" href="/new_upload">

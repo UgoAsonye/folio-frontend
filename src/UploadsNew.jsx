@@ -7,6 +7,7 @@ export function UploadsNew(props) {
     const params = new FormData(event.target);
     params.append("image_file", uploadedImg);
     props.onCreateUpload(params, () => event.target.reset());
+    window.location.href = "/";
   };
 
   const handleSetFile = (event) => {

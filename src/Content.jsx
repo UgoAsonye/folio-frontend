@@ -67,20 +67,12 @@ export function Content() {
     <div>
       <Routes>
         <Route path="/new_upload" element={<UploadsNew onCreateUpload={handleCreateUpload} />} />
-      </Routes>
-      <Routes>
         <Route path="/signup" element={<Signup />} />
-      </Routes>
-      <Routes>
         <Route path="/login" element={<Login />} />
-      </Routes>
-      <Routes>
         <Route
-          path="/homepage"
+          path="/"
           element={<Index uploads={uploads} onShowUpload={handleShowUpload} onCreateComment={handleCreateComment} />}
         />
-      </Routes>
-      <Routes>
         <Route path="/profile" element={<Profile />} />
       </Routes>
 
