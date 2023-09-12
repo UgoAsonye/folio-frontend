@@ -4,6 +4,11 @@ import { useState, useEffect } from "react";
 import { UploadsNew } from "./UploadsNew";
 import { Modal } from "./Modal";
 import { UploadsShow } from "./UploadsShow";
+import { Routes, Route } from "react-router-dom";
+import { Signup } from "./Signup";
+import { Login } from "./Login";
+import { Profile } from "./Profile";
+import { Comment } from "./Comment";
 
 export function Content() {
   const [uploads, setUploads] = useState([]);
@@ -45,12 +50,40 @@ export function Content() {
     });
   };
 
+  const handleShowUser = (user) => {
+    console.log("handleShowUser", user);
+  };
+
+  const handleCreateComment = (params) => {
+    console.log("handleCreateComment", params);
+    axios.post("http://localhost:3000/comments.json", params).then((response) => {
+      console.log(response);
+    });
+  };
+
   useEffect(handleIndex, []);
 
   return (
     <div>
-      <UploadsNew onCreateUpload={handleCreateUpload} />
-      <Index uploads={uploads} onShowUpload={handleShowUpload} />
+      <Routes>
+        <Route path="/new_upload" element={<UploadsNew onCreateUpload={handleCreateUpload} />} />
+      </Routes>
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      <Routes>
+        <Route
+          path="/homepage"
+          element={<Index uploads={uploads} onShowUpload={handleShowUpload} onCreateComment={handleCreateComment} />}
+        />
+      </Routes>
+      <Routes>
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+
       <Modal show={isUploadsShowVisible} onClose={handleClose} onDestroyUpload={handleDestroyUpload}>
         <UploadsShow upload={currentUpload} />
       </Modal>

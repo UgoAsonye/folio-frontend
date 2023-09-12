@@ -2,7 +2,8 @@ export function Comment(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    props.onCreateComment(params, () => event.target.reset());
+    props.onCreateComment(params);
+    event.target.reset();
   };
   return (
     <div>

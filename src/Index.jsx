@@ -1,10 +1,15 @@
-import { Comment } from "./Comment";
 export function Index(props) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const params = new FormData(event.target);
+    props.onCreateComment(params);
+    event.target.reset();
+  };
   return (
     <div>
-      <h1>All Uploads</h1>
+      <h1 className="text-center">All Uploads</h1>
       {props.uploads.map((upload) => (
-        <div key={upload.id} className="card" style={{ width: "50rem" }}>
+        <div key={upload.id} className="card mx-5" style={{ width: "50rem" }}>
           <img src={upload.image} className="card-img-top" alt="Image" />
           <div className="card-body">
             <h5 className="card-title">{upload.title}</h5>
@@ -15,9 +20,26 @@ export function Index(props) {
           </div>
           <ul className="list-group list-group-flush">
             <li className="list-group-item">
-              <Comment />
+              <div>
+                <form onSubmit={handleSubmit}>
+                  <div>
+                    Comment: <input name="comment" type="text" />
+                  </div>
+                  <div>
+                    Upload ID: <input name="upload_id" type="number" placeholder={upload.id} readOnly />
+                  </div>
+                  <button type="submit">Post Comment</button>
+                </form>
+              </div>
             </li>
-            <li className="list-group-item">A second item</li>
+            <li className="list-group-item">
+              {/* {upload.comments.map((comment) => (
+                <div key={comment.id}>
+                  <p>{comment}</p>
+                </div>
+              ))} */}
+              {upload.comments}
+            </li>
             <li className="list-group-item">A third item</li>
           </ul>
         </div>

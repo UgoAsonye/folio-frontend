@@ -2,18 +2,19 @@ import { Header } from "./Header";
 import { Content } from "./Content";
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
-import { Signup } from "./Signup";
-import { Login } from "./Login";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <Header />
-      <Signup />
-      <Login />
-      <Content />
-      <Navbar />
-      <Footer />
+      <BrowserRouter>
+        <Header />
+        {/* <Signup /> */}
+        {/* <Login /> */}
+        <Content />
+        <Navbar />
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
