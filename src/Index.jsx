@@ -26,19 +26,19 @@ export function Index(props) {
                     Comment: <input name="comment" type="text" />
                   </div>
                   <div>
-                    Upload ID: <input name="upload_id" type="number" placeholder={upload.id} readOnly />
+                    <input name="upload_id" type="hidden" value={upload.id} readOnly />
                   </div>
                   <button type="submit">Post Comment</button>
                 </form>
               </div>
             </li>
             <li className="list-group-item">
-              {/* {upload.comments.map((comment) => (
+              {upload.comments.map((comment) => (
                 <div key={comment.id}>
-                  <p>{comment}</p>
+                  <p>{comment.comment}</p>
                 </div>
-              ))} */}
-              {upload.comments}
+              ))}
+              {/* {upload.comments} */}
             </li>
             <li className="list-group-item">A third item</li>
           </ul>

@@ -58,6 +58,16 @@ export function Content() {
     console.log("handleCreateComment", params);
     axios.post("http://localhost:3000/comments.json", params).then((response) => {
       console.log(response);
+      console.log(response.data);
+      const allPosts = uploads.map((post) => {
+        if (post.id === response.data.upload_id) {
+          post.comments.push(response.data);
+          return post;
+        }
+        return post;
+      });
+      console.log(allPosts);
+      setUploads(allPosts);
     });
   };
 

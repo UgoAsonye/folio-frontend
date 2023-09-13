@@ -5,8 +5,8 @@ export function UploadsShow(props) {
 
   return (
     <div>
-      <img src={props.upload.image} style={{ width: "50rem" }} />
-      <button onClick={handleClick}>Delete Upload</button>
+      <img src={props.upload.image} style={{ width: "50rem", height: "25rem" }} />
+      {/* <button onClick={handleClick}>Delete Upload</button> */}
     </div>
   );
 }

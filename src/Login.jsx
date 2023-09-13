@@ -30,6 +30,7 @@ export function Login() {
         console.log(error.response);
         setErrors(["Invalid email or password"]);
       });
+    window.location.href = "/";
   };
 
   return (

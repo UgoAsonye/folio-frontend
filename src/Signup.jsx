@@ -37,7 +37,7 @@ export function Signup() {
           Email: <input name="email" type="email" />
         </div>
         <div>
-          Profile Picture: <input name="profile_pic" type="email" />
+          Profile Picture: <input name="profile_pic" type="text" />
         </div>
         <div>
           Password: <input name="password" type="password" />
